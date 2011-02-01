@@ -5,10 +5,13 @@
 " <Esc> is currently mapped to CapsLock - used external mac app to
 " accomplish this
 
-" allow backspacing over everything in insert mode
-"set backspace=indent,eol,start
-
+" This must be first, because it changes other options as side effect
+set nocompatible
 syn on
+
+set hidden " hide buffers instead of closing
+set nowrap
+set backspace=indent,eol,start " allow backspacing over everything in insert mode
 
 filetype plugin indent on
 set autoindent
@@ -28,6 +31,9 @@ map <C-L> <C-W>l
 
 " hit space to enter commands in vim
 noremap <space> :
+" goto next line (useful when linewrap is on)
+noremap j gj
+noremap k gk
 
 " toggle NERDTree
 " nmap <silent> <F7> :NERDTreeToggle<CR>
