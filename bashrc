@@ -28,4 +28,5 @@ alias lserver='ps aux | grep ruby'
 # create a shortcut to our rails project dir
 rd=~/daniely/Programming/Ruby/Rails/Projects/
 rw=~/daniely/Programming/Ruby/RubyWarrior
+s=$rd/Shejiao
 #cd $rd
