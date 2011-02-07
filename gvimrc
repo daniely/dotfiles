@@ -3,9 +3,9 @@ set guioptions-=r
 set guioptions-=T
 set guifont=Menlo:h15
 
-set transp=4	" transparency only works in macvim's experimental render mode
+"set transp=4	" transparency only works in macvim's experimental render mode
 
-colorscheme vividchalk_DY
+colorscheme DY_railscasts2
 
 " set highlight on
 set cursorline 
