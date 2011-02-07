@@ -7,6 +7,11 @@
 
 " This must be first, because it changes other options as side effect
 set nocompatible
+
+" vim plugin manager. needs to run before filetype detection
+call pathogen#runtime_append_all_bundles()
+call pathogen#helptags()
+
 syn on
 
 set hidden " hide buffers instead of closing
