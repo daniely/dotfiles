@@ -62,13 +62,6 @@ noremap k gk
 " nmap <silent> <F7> :NERDTreeToggle<CR>
 map <leader>d :NERDTreeToggle<CR>
 
-" FuzzyFinder settings
-"let g:fuzzy_matching_limit = 70
-"map <leader>f :FufFile **/<CR>
-"map <leader>b :FufBuffer<CR>
-"map <leader>t :FuzzyFinderTextMate<CR>
-"map <leader>r :FufRenewCache<CR>
-
 map <leader>f :CommandTFlush<CR>
 map <leader>t :CommandT<CR>
 
