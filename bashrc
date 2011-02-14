@@ -29,4 +29,5 @@ alias lserver='ps aux | grep ruby'
 rd=~/daniely/Programming/Ruby/Rails/Projects
 rw=~/daniely/Programming/Ruby/RubyWarrior
 s=$rd/Shejiao
+f=$rd/Flow1
 #cd $rd
