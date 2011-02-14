@@ -43,6 +43,13 @@ map <D-7> :tabn 7<CR>
 map <D-8> :tabn 8<CR>
 map <D-9> :tabn 9<CR>
 
+" bind control-l to hashrocket
+imap <C-l> <Space>=><Space>'
+" convert word into ruby symbol
+imap <C-k> <C-o>b:<Esc>ea
+"imap <C-k> <C-o>mu<Esc>bi:<Esc>'u
+nmap <C-k> lbi:<Esc>E
+
 " Make it easy to update/reload .vimrc
 nmap <leader>s :source ~/.vimrc<CR>
 
