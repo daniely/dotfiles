@@ -80,3 +80,6 @@ set backupdir=~/.vimbackup
 
 " tell vim where to put swap files
 set dir=~/.vimswap
+
+" fix for rvm
+set shell=/bin/sh
