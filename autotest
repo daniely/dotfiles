@@ -2,3 +2,9 @@ require 'autotest/fsevent'
 require 'autotest/restart'
 require 'autotest/growl'
 require 'autotest/timestamp'
+
+Autotest.add_hook :initialize do |at|
+  at.add_mapping(%r%^spec/(acceptance)/.*rb$%) {|filename, _|
+    filename
+  }
+end
