@@ -47,8 +47,13 @@ map <D-9> :tabn 9<CR>
 imap <C-l> <Space>=><Space>'
 " convert word into ruby symbol
 imap <C-k> <C-o>b:<Esc>ea
-"imap <C-k> <C-o>mu<Esc>bi:<Esc>'u
+" following mapping wont work since we have one for C-K already
 nmap <C-k> lbi:<Esc>E
+" convert word into ruby interpolation
+imap <C-i> <C-o>B#{<Esc>Ea}
+
+"dunno what the following is
+"imap <C-k> <C-o>mu<Esc>bi:<Esc>'u
 
 " Make it easy to update/reload .vimrc
 nmap <leader>s :source ~/.vimrc<CR>
