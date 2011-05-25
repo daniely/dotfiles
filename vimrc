@@ -50,7 +50,7 @@ imap <C-k> <C-o>b:<Esc>ea
 " following mapping wont work since we have one for C-K already
 nmap <C-k> lbi:<Esc>E
 " convert word into ruby interpolation
-imap <C-i> <C-o>B#{<Esc>Ea}
+imap <C-j> <C-o>B#{<Esc>Ea}
 
 "dunno what the following is
 "imap <C-k> <C-o>mu<Esc>bi:<Esc>'u
@@ -59,10 +59,10 @@ imap <C-i> <C-o>B#{<Esc>Ea}
 nmap <leader>s :source ~/.vimrc<CR>
 
 " for navigating split windows easily
-map <C-J> <C-W>j
-map <C-K> <C-W>k
-map <C-H> <C-W>h
-map <C-L> <C-W>l
+"map <C-J> <C-W>j
+"map <C-K> <C-W>k
+"map <C-H> <C-W>h
+"map <C-L> <C-W>l
 
 " hit space to enter commands in vim
 noremap <space> :
