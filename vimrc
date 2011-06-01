@@ -89,3 +89,4 @@ set dir=~/.vimswap
 " fix for rvm
 set shell=/bin/sh
 
+colorscheme BusyBee

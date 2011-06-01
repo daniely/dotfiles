@@ -5,10 +5,10 @@ set guifont=Menlo:h15
 
 "set transp=4	" transparency only works in macvim's experimental render mode
 
-colorscheme DY_railscasts2
+colorscheme DY_rc2
 
 " set highlight on
-set cursorline 
+"set cursorline 
 
 " colored statusline with some useful info
 "sample with color:
