@@ -89,10 +89,3 @@ set dir=~/.vimswap
 " fix for rvm
 set shell=/bin/sh
 
-" performance
-set notimeout
-set ttimeout
-set timeoutlen=50
-
-" colors
-set t_Co=256
