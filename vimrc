@@ -52,9 +52,6 @@ nmap <C-k> lbi:<Esc>E
 " convert word into ruby interpolation
 imap <C-j> <C-o>B#{<Esc>Ea}
 
-"dunno what the following is
-"imap <C-k> <C-o>mu<Esc>bi:<Esc>'u
-
 " Make it easy to update/reload .vimrc
 nmap <leader>s :source ~/.vimrc<CR>
 
