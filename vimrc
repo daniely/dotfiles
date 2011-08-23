@@ -72,3 +72,6 @@ set dir=~/.vimswap
 set shell=/bin/sh
 
 colorscheme BusyBee
+
+" always show statusline, never realized how useful this is
+set laststatus=2
