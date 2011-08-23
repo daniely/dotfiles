@@ -43,23 +43,14 @@ map <D-7> :tabn 7<CR>
 map <D-8> :tabn 8<CR>
 map <D-9> :tabn 9<CR>
 
-" bind control-l to hashrocket
-imap <C-l> <Space>=><Space>'
-" convert word into ruby symbol
-imap <C-k> <C-o>b:<Esc>ea
-" following mapping wont work since we have one for C-K already
-nmap <C-k> lbi:<Esc>E
-" convert word into ruby interpolation
-imap <C-j> <C-o>B#{<Esc>Ea}
-
 " Make it easy to update/reload .vimrc
 nmap <leader>s :source ~/.vimrc<CR>
 
 " for navigating split windows easily
-"map <C-J> <C-W>j
-"map <C-K> <C-W>k
-"map <C-H> <C-W>h
-"map <C-L> <C-W>l
+map <C-J> <C-W>j
+map <C-K> <C-W>k
+map <C-H> <C-W>h
+map <C-L> <C-W>l
 
 " hit space to enter commands in vim
 noremap <space> :
