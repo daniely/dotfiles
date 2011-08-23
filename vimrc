@@ -43,9 +43,6 @@ map <D-7> :tabn 7<CR>
 map <D-8> :tabn 8<CR>
 map <D-9> :tabn 9<CR>
 
-" Make it easy to update/reload .vimrc
-nmap <leader>s :source ~/.vimrc<CR>
-
 " for navigating split windows easily
 map <C-J> <C-W>j
 map <C-K> <C-W>k
