@@ -59,7 +59,10 @@ noremap k gk
 " nmap <silent> <F7> :NERDTreeToggle<CR>
 map <leader>d :NERDTreeToggle<CR>
 
+" ack
 map ,a :Ack<space>
+" ZoomWin configuration
+map <Leader><Leader> :ZoomWin<CR>
 
 " tell vim to keep a backup file
 set backup
