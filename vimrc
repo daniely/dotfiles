@@ -59,6 +59,8 @@ noremap k gk
 " nmap <silent> <F7> :NERDTreeToggle<CR>
 map <leader>d :NERDTreeToggle<CR>
 
+map ,a :Ack<space>
+
 " tell vim to keep a backup file
 set backup
 
