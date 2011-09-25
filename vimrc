@@ -66,17 +66,33 @@ map <Leader><Leader> :ZoomWin<CR>
 
 " tell vim to keep a backup file
 set backup
+"set nobackup
 
 " tell vim where to put its backup files
-set backupdir=~/.vimbackup
+set backupdir=./.vimbackup//, ~/.vimbackup//
 
 " tell vim where to put swap files
-set dir=~/.vimswap
+set directory=./.vimswap//, ~/.vimswap//
 
 " fix for rvm
 set shell=/bin/sh
 
-colorscheme BusyBee
+colorscheme solarized
+set bg=dark
+" can't tell if t_Co is working or not
+set t_Co=256
 
 " always show statusline, never realized how useful this is
 set laststatus=2
+
+" Inserts the path of the currently edited file into a command
+" Command mode: Ctrl+P
+cmap <C-P> <C-R>=expand("%:h") . "/" <CR>
+
+" Inserts the start of rspec script
+" Command mode: Ctrl+P
+"cmap <C-R> <C-R>="map ,t :w \|!clear && rspec --tag r" . expand("%:h") . "/" <CR>
+
+set showcmd
+
+set history=1000
