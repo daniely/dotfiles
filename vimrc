@@ -96,3 +96,6 @@ cmap <C-P> <C-R>=expand("%:h") . "/" <CR>
 set showcmd
 
 set history=1000
+
+" don't let fugitive buffers pile up
+autocmd BufReadPost fugitive://* set bufhidden=delete
