@@ -69,10 +69,10 @@ set backup
 "set nobackup
 
 " tell vim where to put its backup files
-set backupdir=./.vimbackup//, ~/.vimbackup//
+set backupdir=~/.vimbackup
 
 " tell vim where to put swap files
-set directory=./.vimswap//, ~/.vimswap//
+set directory=~/.vimswap
 
 " fix for rvm
 set shell=/bin/sh
