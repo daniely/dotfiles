@@ -17,6 +17,9 @@ set hidden " hide buffers instead of closing
 set nowrap
 set backspace=indent,eol,start " allow backspacing over everything in insert mode
 
+" use incremental search
+set incsearch
+
 filetype plugin indent on
 set autoindent
 set expandtab
