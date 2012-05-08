@@ -21,7 +21,7 @@ plugins=(git)
 source $ZSH/oh-my-zsh.sh
 
 # Customize to your needs...
-export PATH=/Users/Daniel/.rvm/gems/ruby-1.9.2-p136/bin:/Users/Daniel/.rvm/gems/ruby-1.9.2-p136@global/bin:/Users/Daniel/.rvm/rubies/ruby-1.9.2-p136/bin:/Users/Daniel/.rvm/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/X11/bin
+export PATH=/Users/Daniel/.rvm/gems/ruby-1.9.2-p136/bin:/Users/Daniel/.rvm/gems/ruby-1.9.2-p136@global/bin:/Users/Daniel/.rvm/rubies/ruby-1.9.2-p136/bin:/Users/Daniel/.rvm/bin:/usr/local/sbin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/X11/bin
 
 # fix for rvm
 unsetopt auto_name_dirs
