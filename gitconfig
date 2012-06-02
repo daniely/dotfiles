@@ -15,6 +15,15 @@
 	df = diff
 	dfs = diff --staged
         hist = log --pretty=format:\"%h %ad | %s%d [%an]\" --graph --date=short
+
+        head = !git l -1
+        h = !git head
+        hp = "!source ~/.githelpers && show_git_head"
+        r = !git l -30
+        ra = !git r --all
+        l = "!source ~/.githelpers && pretty_git_log"
+        la = !git l --all
+
 [core]
 	excludesfile = /Users/Daniel/.gitignore
 	autocrlf = input
