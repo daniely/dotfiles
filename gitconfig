@@ -1,0 +1,22 @@
+[user]
+	name = Daniel
+	email = robotright@gmail.com
+[color]
+	status = auto
+	branch = auto
+	diff = auto
+[alias]
+	ci = commit -v
+	co = checkout
+	cob = checkout -b
+	st = status
+	sts = status -s
+	br = branch
+	df = diff
+	dfs = diff --staged
+        hist = log --pretty=format:\"%h %ad | %s%d [%an]\" --graph --date=short
+[core]
+	excludesfile = /Users/Daniel/.gitignore
+	autocrlf = input
+	safecrlf = false
+	editor = /usr/local/Cellar/vim/7.3.266/bin/vim
