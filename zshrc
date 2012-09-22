@@ -28,4 +28,6 @@ unsetopt auto_name_dirs
 # load rvm into shell session
 [[ -s "$HOME/.rvm/scripts/rvm" ]] && . "$HOME/.rvm/scripts/rvm"
 
+DISABLE_AUTO_TITLE=true
+
 rvm default
