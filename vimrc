@@ -101,3 +101,7 @@ set history=1000
 
 " don't let fugitive buffers pile up
 autocmd BufReadPost fugitive://* set bufhidden=delete
+
+" show trailing white spaces
+set listchars=tab:>\ ,trail:-,extends:>,precedes:<,nbsp:+
+set list
