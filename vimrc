@@ -19,6 +19,9 @@ set backspace=indent,eol,start " allow backspacing over everything in insert mod
 
 " use incremental search
 set incsearch
+" ignore case but be smart about it
+set ignorecase
+set smartcase
 
 filetype plugin indent on
 set autoindent
@@ -79,10 +82,15 @@ set directory=~/.vimswap
 " fix for rvm
 set shell=/bin/sh
 
-colorscheme solarized
+syntax enable
 set bg=dark
+colorscheme solarized
+" solarized options
+"let g:solarized_termcolors = 256
+"let g:solarized_visibility = "high"
+"let g:solarized_contrast = "high"
 " can't tell if t_Co is working or not
-set t_Co=256
+"set t_Co=256
 
 " always show statusline, never realized how useful this is
 set laststatus=2
@@ -101,6 +109,10 @@ set history=1000
 
 " don't let fugitive buffers pile up
 autocmd BufReadPost fugitive://* set bufhidden=delete
+
+" remove trailing white spaces on :w
+" hold off on this - a bit too aggressive
+"autocmd BufWritePre * :%s/\s\+$//e
 
 " show trailing white spaces
 set listchars=tab:>\ ,trail:-,extends:>,precedes:<,nbsp:+
