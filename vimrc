@@ -1,10 +1,3 @@
-
-"imap jj <Esc>
-" map ESC to jj which is easier/quicker to reach
-" map! jj <Esc>
-" <Esc> is currently mapped to CapsLock - used external mac app to
-" accomplish this
-
 " This must be first, because it changes other options as side effect
 set nocompatible
 
@@ -71,7 +64,6 @@ map <Leader><Leader> :ZoomWin<CR>
 
 " tell vim to keep a backup file
 set backup
-"set nobackup
 
 " tell vim where to put its backup files
 set backupdir=~/.vimbackup
@@ -79,18 +71,16 @@ set backupdir=~/.vimbackup
 " tell vim where to put swap files
 set directory=~/.vimswap
 
-" fix for rvm
-set shell=/bin/sh
-
 syntax enable
 set bg=dark
+
+" can't tell if t_Co is working or not
 colorscheme solarized
 " solarized options
-"let g:solarized_termcolors = 256
-"let g:solarized_visibility = "high"
-"let g:solarized_contrast = "high"
-" can't tell if t_Co is working or not
-"set t_Co=256
+let g:solarized_termcolors = 256
+let g:solarized_visibility = "high"
+let g:solarized_contrast = "high"
+set t_Co=256
 
 " always show statusline, never realized how useful this is
 set laststatus=2
