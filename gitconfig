@@ -28,4 +28,4 @@
 	excludesfile = /Users/Daniel/.gitignore
 	autocrlf = input
 	safecrlf = false
-	editor = /usr/local/Cellar/vim/7.3.266/bin/vim
+	editor = /usr/local/bin/vim
