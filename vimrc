@@ -24,7 +24,9 @@ set shiftwidth=2
 set smarttab
 
 set ru
-set number 	" show line numbers
+
+" show line numbers
+set number
 
 " Set mapleader
 let mapleader = ","
