@@ -1,4 +1,4 @@
 --ignore-dir=vendor
 --type-add=ruby=.haml,.rake
---type-add=css=.sass,.scss
+--type-add=css=.sass,.scss,.less
 --pager=less -R
