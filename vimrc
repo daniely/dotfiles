@@ -112,6 +112,6 @@ set list
 
 " auto adjust win height
 set winheight=30
-set winminheight=5
+set winminheight=7
 set winwidth=95
 set winminwidth=10
