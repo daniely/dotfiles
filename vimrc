@@ -115,3 +115,9 @@ set winheight=30
 set winminheight=7
 set winwidth=95
 set winminwidth=10
+
+" vimux mappings
+map <leader>vp :VimuxPromptCommand<CR>
+map <leader>vl :VimuxRunLastCommand<CR>
+map <leader>vi :VimuxInspectRunner<CR>
+map <leader>vx :VimuxClosePanes<CR>
