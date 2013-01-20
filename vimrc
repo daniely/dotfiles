@@ -121,3 +121,7 @@ map <leader>vp :VimuxPromptCommand<CR>
 map <leader>vl :VimuxRunLastCommand<CR>
 map <leader>vi :VimuxInspectRunner<CR>
 map <leader>vx :VimuxClosePanes<CR>
+
+" taglist plugin
+let Tlist_Ctags_Cmd='/usr/local/bin/ctags'
+map <leader>e :TlistToggle<CR>
