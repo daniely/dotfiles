@@ -1,11 +1,11 @@
 # Default Github
-Host github.com
+Host default.github.com
   HostName github.com
   User git
   IdentityFile ~/.ssh/id_rsa
 
 # Sleepy Giant Github
-Host sge.github.com
+Host github.com
   HostName github.com
   PreferredAuthentications publickey
   IdentityFile ~/.ssh/sleepygiant_rsa
