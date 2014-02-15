@@ -25,7 +25,7 @@
         la = !git l --all
 
 [core]
-	excludesfile = /Users/Daniel/.gitignore
+	excludesfile = /Users/daniel/.gitignore_global
 	autocrlf = input
 	safecrlf = false
 	editor = /usr/local/bin/vim
