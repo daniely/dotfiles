@@ -61,7 +61,7 @@ noremap k gk
 map <leader>d :NERDTreeToggle<CR>
 
 " ack
-map ,a :Ack<space>
+map <leader>a :Ack<space>
 " ZoomWin configuration
 map <Leader><Leader> :ZoomWin<CR>
 
