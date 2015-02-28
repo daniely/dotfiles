@@ -56,15 +56,6 @@ noremap <space> :
 noremap j gj
 noremap k gk
 
-" toggle NERDTree
-" nmap <silent> <F7> :NERDTreeToggle<CR>
-map <leader>d :NERDTreeToggle<CR>
-
-" ack
-map <leader>a :Ack<space>
-" ZoomWin configuration
-map <Leader><Leader> :ZoomWin<CR>
-
 " tell vim to keep a backup file
 set backup
 
@@ -114,6 +105,25 @@ set list
 " auto adjust win height
 set winwidth=95
 set winminwidth=10
+
+" leader key mappings
+
+" flush commandT buffer
+map <leader>f :CommandTFlush<CR>
+
+" taglist plugin
+let Tlist_Ctags_Cmd='/usr/local/bin/ctags'
+let g:tagbar_usearrows = 1
+map <leader>e :TagbarToggle<CR>
+
+" toggle NERDTree
+map <leader>d :NERDTreeToggle<CR>
+
+" ack
+map <leader>a :Ack<space>
+
+" ZoomWin configuration
+map <Leader><Leader> :ZoomWin<CR>
 
 " vimux mappings
 map <leader>vp :VimuxPromptCommand<CR>
