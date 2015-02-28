@@ -1,6 +1,6 @@
 [user]
 	name = Daniel
-	email = robotright@gmail.com
+	email = daniel.kiros@gmail.com
 [color]
 	status = auto
 	branch = auto
@@ -29,3 +29,5 @@
 	autocrlf = input
 	safecrlf = false
 	editor = /usr/local/bin/vim
+[push]
+	default = current
