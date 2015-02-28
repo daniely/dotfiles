@@ -131,6 +131,6 @@ map <leader>vl :VimuxRunLastCommand<CR>
 map <leader>vi :VimuxInspectRunner<CR>
 map <leader>vx :VimuxClosePanes<CR>
 
-" taglist plugin
-let Tlist_Ctags_Cmd='/usr/local/bin/ctags'
-map <leader>e :TlistToggle<CR>
+" Syntax Highlighting
+au BufNewFile,BufRead *.hbs.erb set ft=mustache
+au BufNewFile,BufRead *.scss.erb set ft=scss
