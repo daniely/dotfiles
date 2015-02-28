@@ -2,7 +2,7 @@
 set nocompatible
 
 " vim plugin manager. needs to run before filetype detection
-call pathogen#infect()
+execute pathogen#infect()
 
 syn on
 
