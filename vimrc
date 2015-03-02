@@ -136,3 +136,5 @@ map <leader>vx :VimuxClosePanes<CR>
 " Syntax Highlighting
 au BufNewFile,BufRead *.hbs.erb set ft=mustache
 au BufNewFile,BufRead *.scss.erb set ft=scss
+
+au FileType python setl sw=4 sts=4 et
