@@ -68,12 +68,8 @@ set directory=~/.vimswap
 syntax enable
 set bg=dark
 
+colorscheme gruvbox
 " can't tell if t_Co is working or not
-colorscheme solarized
-" solarized options
-let g:solarized_termcolors = 256
-let g:solarized_visibility = "high"
-let g:solarized_contrast = "high"
 set t_Co=256
 
 " always show statusline, never realized how useful this is
