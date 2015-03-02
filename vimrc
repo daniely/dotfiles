@@ -134,3 +134,11 @@ au BufNewFile,BufRead *.hbs.erb set ft=mustache
 au BufNewFile,BufRead *.scss.erb set ft=scss
 
 au FileType python setl sw=4 sts=4 et
+
+" detect jsx
+autocmd BufNewFile,BufRead *.jsx let b:jsx_ext_found = 1
+autocmd BufNewFile,BufRead *.jsx set filetype=javascript.jsx
+
+" jsx linting
+let g:syntastic_javascript_checkers = ['jsxhint']
+let g:syntastic_javascript_jsxhint_exec = 'jsx-jshint-wrapper'
