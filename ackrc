@@ -1,7 +1,10 @@
+--ignore-dir=tmp
 --ignore-dir=vendor
 --ignore-dir=env
 --ignore-dir=node_modules
 --ignore-dir=bower_components
+--ignore-dir=app/static
+--ignore-file=is:tags
 --type-add=ruby=.haml,.rake,.slim
 --type-add=css=.sass,.scss,.less
 --pager=less -R
