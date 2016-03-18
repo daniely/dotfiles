@@ -31,3 +31,5 @@
 	editor = /usr/local/bin/vim
 [push]
 	default = current
+[credential]
+	helper = osxkeychain
