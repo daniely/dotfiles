@@ -1,8 +1,22 @@
 " This must be first, because it changes other options as side effect
 set nocompatible
 
-" vim plugin manager. needs to run before filetype detection
-execute pathogen#infect()
+
+call plug#begin('~/.vim/plugged')
+
+" Make sure you use single quotes
+
+" On-demand loading
+Plug 'scrooloose/nerdtree', { 'on':  'NERDTreeToggle' }
+
+" color scheme
+Plug 'https://github.com/morhetz/gruvbox'
+" git plugin
+Plug 'https://github.com/tpope/vim-fugitive'
+
+" Add plugins to &runtimepath
+call plug#end()
+
 
 syn on
 
