@@ -1,4 +1,5 @@
 --ignore-dir=tmp
+--ignore-dir=log
 --ignore-dir=vendor
 --ignore-dir=env
 --ignore-dir=node_modules
