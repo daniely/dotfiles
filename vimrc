@@ -145,3 +145,6 @@ let g:syntastic_javascript_jsxhint_exec = 'jsx-jshint-wrapper'
 set runtimepath^=~/.vim/bundle/ctrlp.vim
 " ignore somd folders from fuzzy search
 set wildignore+=bower_components,node_modules,tmp
+
+" insert capybara screenshot
+imap <c-l> save_and_open_page
