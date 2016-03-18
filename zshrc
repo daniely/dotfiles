@@ -48,6 +48,7 @@ source "$HOME/.vim/bundle/gruvbox/gruvbox_256palette_osx.sh"
 
 # Customize to your needs...
 export PATH=$HOME/.rbenv/bin:/usr/local/bin:/usr/local/sbin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/heroku/bin
+# for rbenv
 eval "$(rbenv init -)"
 
 export EDITOR=vim
