@@ -104,11 +104,6 @@ set winminwidth=10
 
 " leader key mappings
 
-" flush commandT buffer
-map <leader>f :CommandTFlush<CR>
-" ignore somd folders in commandT
-set wildignore+=bower_components,node_modules
-
 " taglist plugin
 let Tlist_Ctags_Cmd='/usr/local/bin/ctags'
 let g:tagbar_usearrows = 1
