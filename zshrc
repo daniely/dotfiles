@@ -43,6 +43,9 @@ export EDITOR=vim
 # completely disable zsh autocorrect
 #unsetopt correct_all
 
+# fix colorscheme
+source "$HOME/.vim/bundle/gruvbox/gruvbox_256palette_osx.sh"
+
 # Customize to your needs...
 export PATH=$HOME/.rbenv/bin:/usr/local/bin:/usr/local/sbin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/heroku/bin
 eval "$(rbenv init -)"
