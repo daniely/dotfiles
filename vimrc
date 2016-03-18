@@ -140,3 +140,8 @@ autocmd BufNewFile,BufRead *.jsx set filetype=javascript.jsx
 " jsx linting
 let g:syntastic_javascript_checkers = ['jsxhint']
 let g:syntastic_javascript_jsxhint_exec = 'jsx-jshint-wrapper'
+
+" fuzzy search (command-t replacement)
+set runtimepath^=~/.vim/bundle/ctrlp.vim
+" ignore somd folders from fuzzy search
+set wildignore+=bower_components,node_modules,tmp
