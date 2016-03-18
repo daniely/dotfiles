@@ -90,6 +90,8 @@ set history=1000
 
 " don't let fugitive buffers pile up
 autocmd BufReadPost fugitive://* set bufhidden=delete
+" default fugitive into vertial splits
+set diffopt+=vertical
 
 " remove trailing white spaces on :w
 " hold off on this - a bit too aggressive
