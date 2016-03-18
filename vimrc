@@ -69,6 +69,7 @@ syntax enable
 set bg=dark
 
 colorscheme gruvbox
+"colorscheme hybrid
 " can't tell if t_Co is working or not
 set t_Co=256
 
