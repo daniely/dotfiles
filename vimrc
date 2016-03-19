@@ -11,6 +11,7 @@ Plug 'scrooloose/nerdtree', { 'on':  'NERDTreeToggle' }
 
 " color scheme
 Plug 'https://github.com/morhetz/gruvbox'
+
 " git plugin
 Plug 'https://github.com/tpope/vim-fugitive'
 
@@ -18,7 +19,7 @@ Plug 'https://github.com/tpope/vim-fugitive'
 Plug 'https://github.com/ctrlpvim/ctrlp.vim'
 
 " try this out instead of lusty juggler
-"Plug 'https://github.com/fholgado/minibufexpl.vim'
+Plug 'https://github.com/fholgado/minibufexpl.vim'
 
 " make things look nice
 Plug 'vim-airline/vim-airline'
