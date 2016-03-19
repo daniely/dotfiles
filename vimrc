@@ -18,11 +18,16 @@ Plug 'https://github.com/tpope/vim-fugitive'
 " ctrlp - replacement for commandT
 Plug 'https://github.com/ctrlpvim/ctrlp.vim'
 
-" try this out instead of lusty juggler
-Plug 'https://github.com/fholgado/minibufexpl.vim'
+Plug 'rking/ag.vim'
+
+Plug 'https://github.com/scrooloose/nerdcommenter.git'
 
 " make things look nice
 Plug 'vim-airline/vim-airline'
+
+
+" try this out instead of lusty juggler
+"Plug 'https://github.com/fholgado/minibufexpl.vim'
 
 " Add plugins to &runtimepath
 call plug#end()
@@ -146,8 +151,8 @@ map <leader>e :TagbarToggle<CR>
 " toggle NERDTree
 map <leader>d :NERDTreeToggle<CR>
 
-" ack
-map <leader>a :Ack<space>
+" ag a.k.a silver searcher
+map <leader>a :Ag<space>
 
 " ZoomWin configuration
 map <Leader><Leader> :ZoomWin<CR>
