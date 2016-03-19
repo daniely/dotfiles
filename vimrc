@@ -94,6 +94,11 @@ set bg=dark
 
 let $NVIM_TUI_ENABLE_TRUE_COLOR=1
 
+" powerline settings
+let g:airline_powerline_fonts = 1
+let g:airline_left_sep = ''
+let g:airline_right_sep = ''
+
 colorscheme gruvbox
 "colorscheme hybrid
 " can't tell if t_Co is working or not
