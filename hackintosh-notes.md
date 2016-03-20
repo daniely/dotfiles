@@ -7,6 +7,20 @@ credit to https://gist.github.com/kevinelliott/e12aa642a8388baf2499
   * `cd ~/Library/Fonts && curl -fLo "Inconsolata-g for Powerline.otf" https://raw.githubusercontent.com/powerline/fonts/master/Inconsolata-g/Inconsolata-g%20for%20Powerline.otf`
   * set the font in Preferences -> Profiles -> Text
 
+* brew install phantomjs
+
+## Propane.pro project
+```
+# install qt for capybara webkit
+brew install qt
+
+# install v8 in this order
+gem uninstall libv8
+brew install v8
+gem install therubyracer
+gem install libv8 -v '3.16.14.3' -- --with-system-v8
+```
+
 ```
 # fix Ctrl+h in neovim through iTerm2 preferences
 Edit -> Preferences -> Keys
@@ -15,6 +29,18 @@ Press Ctrl+h as Keyboard Shortcut
 Choose Send Escape Sequence as Action
 Type [104;5u
 ```
+
+```
+# install redis
+brew install redis
+# To have launchd start redis at login:
+  ln -sfv /usr/local/opt/redis/*.plist ~/Library/LaunchAgents
+# Then to load redis now:
+  launchctl load ~/Library/LaunchAgents/homebrew.mxcl.redis.plist
+# test redis is running
+  redis-cli ping
+```
+
 
 * use prezto (for zsh)
 * install nvim
