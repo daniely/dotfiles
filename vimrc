@@ -147,6 +147,10 @@ autocmd BufReadPost fugitive://* set bufhidden=delete
 " default fugitive into vertial splits
 set diffopt+=vertical
 
+" ctrlp for buffers
+map <leader>b :CtrlPBuffer<CR>
+let g:ctrlp_match_window = 'max:25,results:25'
+
 " jsx linting
 let g:syntastic_javascript_checkers = ['jsxhint']
 let g:syntastic_javascript_jsxhint_exec = 'jsx-jshint-wrapper'
