@@ -5,38 +5,32 @@ set nocompatible
 " -----------------------------------------------------------------
 call plug#begin('~/.vim/plugged')
 
-" Make sure you use single quotes
-
 " On-demand loading
 Plug 'scrooloose/nerdtree', { 'on':  'NERDTreeToggle' }
-
 Plug 'scrooloose/nerdcommenter'
-
 " color scheme
 Plug 'https://github.com/morhetz/gruvbox'
-
 " git plugin
 Plug 'tpope/vim-fugitive'
-
 " rails specific
 Plug 'tpope/vim-rails'
 Plug 'tpope/vim-haml'
 Plug 'slim-template/vim-slim'
-
 " ctrlp - replacement for commandT
 Plug 'https://github.com/ctrlpvim/ctrlp.vim'
-
 " ag / silver searcher - ack replacement
 Plug 'rking/ag.vim'
-
 " make things look nice
 Plug 'vim-airline/vim-airline'
 
 " Add plugins to &runtimepath
 call plug#end()
 
+" behavior
+" -----------------------------------------------------------------
 
 syn on
+syntax enable
 
 set hidden " hide buffers instead of closing
 set nowrap
@@ -56,17 +50,33 @@ set tabstop=2
 set shiftwidth=2
 set smarttab
 
+" show ruler
 set ru
-
 " show line numbers
 set number
+set showcmd
 
-" key mappings
+" leader key mappings
 " -----------------------------------------------------------------
-
-" Set mapleader
 let mapleader = ","
 let g:mapleader = ","
+
+map <leader>e :TagbarToggle<CR>
+
+" toggle NERDTree
+map <leader>d :NERDTreeToggle<CR>
+
+" ag a.k.a silver searcher
+map <leader>a :Ag<space>
+
+" vimux mappings
+map <leader>vp :VimuxPromptCommand<CR>
+map <leader>vl :VimuxRunLastCommand<CR>
+map <leader>vi :VimuxInspectRunner<CR>
+map <leader>vx :VimuxClosePanes<CR>
+
+" other key mappings
+" -----------------------------------------------------------------
 
 " for navigating split windows easily
 map <C-J> <C-W>j
@@ -76,9 +86,13 @@ map <C-L> <C-W>l
 
 " hit space to enter commands in vim
 noremap <space> :
+
 " goto next line (useful when linewrap is on)
 noremap j gj
 noremap k gk
+
+" history / backup
+" -----------------------------------------------------------------
 
 " tell vim to keep a backup file
 set backup
@@ -89,44 +103,20 @@ set backupdir=~/.vimbackup
 " tell vim where to put swap files
 set directory=~/.vimswap
 
-syntax enable
-set bg=dark
+set history=1000
+
+" graphics / look and feel / layout
+" -----------------------------------------------------------------
 
 let $NVIM_TUI_ENABLE_TRUE_COLOR=1
-
-" powerline settings
-let g:airline_powerline_fonts = 1
-let g:airline_left_sep = ''
-let g:airline_right_sep = ''
-
+set bg=dark
 colorscheme gruvbox
-"colorscheme hybrid
+
 " can't tell if t_Co is working or not
 set t_Co=256
 
 " always show statusline, never realized how useful this is
 set laststatus=2
-
-" Inserts the path of the currently edited file into a command
-" Command mode: Ctrl+P
-cmap <C-P> <C-R>=expand("%:h") . "/" <CR>
-
-" Inserts the start of rspec script
-" Command mode: Ctrl+P
-"cmap <C-R> <C-R>="map ,t :w \|!clear && rspec --tag r" . expand("%:h") . "/" <CR>
-
-set showcmd
-
-set history=1000
-
-" don't let fugitive buffers pile up
-autocmd BufReadPost fugitive://* set bufhidden=delete
-" default fugitive into vertial splits
-set diffopt+=vertical
-
-" remove trailing white spaces on :w
-" hold off on this - a bit too aggressive
-"autocmd BufWritePre * :%s/\s\+$//e
 
 " show trailing white spaces
 set listchars=tab:>\ ,trail:-,extends:>,precedes:<,nbsp:+
@@ -136,27 +126,8 @@ set list
 set winwidth=95
 set winminwidth=10
 
-" leader key mappings
-
-" taglist plugin
-let Tlist_Ctags_Cmd='/usr/local/bin/ctags'
-let g:tagbar_usearrows = 1
-map <leader>e :TagbarToggle<CR>
-
-" toggle NERDTree
-map <leader>d :NERDTreeToggle<CR>
-
-" ag a.k.a silver searcher
-map <leader>a :Ag<space>
-
-" ZoomWin configuration
-map <Leader><Leader> :ZoomWin<CR>
-
-" vimux mappings
-map <leader>vp :VimuxPromptCommand<CR>
-map <leader>vl :VimuxRunLastCommand<CR>
-map <leader>vi :VimuxInspectRunner<CR>
-map <leader>vx :VimuxClosePanes<CR>
+" files / file system
+" -----------------------------------------------------------------
 
 " Syntax Highlighting
 au BufNewFile,BufRead *.hbs.erb set ft=mustache
@@ -168,15 +139,39 @@ au FileType python setl sw=4 sts=4 et
 autocmd BufNewFile,BufRead *.jsx let b:jsx_ext_found = 1
 autocmd BufNewFile,BufRead *.jsx set filetype=javascript.jsx
 
+" plugin specific
+" -----------------------------------------------------------------
+
+" don't let fugitive buffers pile up
+autocmd BufReadPost fugitive://* set bufhidden=delete
+" default fugitive into vertial splits
+set diffopt+=vertical
+
 " jsx linting
 let g:syntastic_javascript_checkers = ['jsxhint']
 let g:syntastic_javascript_jsxhint_exec = 'jsx-jshint-wrapper'
 
+" powerline settings
+let g:airline_powerline_fonts = 1
+let g:airline_left_sep = ''
+let g:airline_right_sep = ''
+
+" taglist plugin
+let Tlist_Ctags_Cmd='/usr/local/bin/ctags'
+let g:tagbar_usearrows = 1
+
 " ignore somd folders from fuzzy search
 set wildignore+=bower_components,node_modules,tmp
 
+" my unique preferences
+" -----------------------------------------------------------------
+
 " insert capybara screenshot
 imap <c-l> save_and_open_page
+
+" Inserts the path of the currently edited file into a command
+" Command mode: Ctrl+P
+cmap <C-P> <C-R>=expand("%:h") . "/" <CR>
 
 " hacks / fixes
 " -----------------------------------------------------------------
@@ -189,3 +184,12 @@ endif
 " experimental
 " -----------------------------------------------------------------
 
+"colorscheme hybrid
+
+" Inserts the start of rspec script
+" Command mode: Ctrl+P
+"cmap <C-R> <C-R>="map ,t :w \|!clear && rspec --tag r" . expand("%:h") . "/" <CR>
+
+" remove trailing white spaces on :w
+" hold off on this - a bit too aggressive
+"autocmd BufWritePre * :%s/\s\+$//e
