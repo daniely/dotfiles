@@ -182,3 +182,11 @@ set wildignore+=bower_components,node_modules,tmp
 
 " insert capybara screenshot
 imap <c-l> save_and_open_page
+
+" hacks / fixes
+" -----------------------------------------------------------------
+
+"  Temporary fix for neovim/neovim#2048 - ctrl-h treated as back sp
+if has('nvim')
+  nmap <BS> <C-W>h
+endif
