@@ -61,6 +61,9 @@ set ru
 " show line numbers
 set number
 
+" key mappings
+" -----------------------------------------------------------------
+
 " Set mapleader
 let mapleader = ","
 let g:mapleader = ","
@@ -193,3 +196,7 @@ imap <c-l> save_and_open_page
 if has('nvim')
   nmap <BS> <C-W>h
 endif
+
+" experimental
+" -----------------------------------------------------------------
+
