@@ -61,6 +61,8 @@ set showcmd
 let mapleader = ","
 let g:mapleader = ","
 
+map <leader>s :nohlsearch<CR>
+
 map <leader>e :TagbarToggle<CR>
 
 " toggle NERDTree
