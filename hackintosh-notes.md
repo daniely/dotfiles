@@ -22,15 +22,6 @@ gem install libv8 -v '3.16.14.3' -- --with-system-v8
 ```
 
 ```
-# fix Ctrl+h in neovim through iTerm2 preferences
-Edit -> Preferences -> Keys
-Press +
-Press Ctrl+h as Keyboard Shortcut
-Choose Send Escape Sequence as Action
-Type [104;5u
-```
-
-```
 # install redis
 brew install redis
 # To have launchd start redis at login:
