@@ -1,6 +1,9 @@
 credit to https://gist.github.com/kevinelliott/e12aa642a8388baf2499
 
 # CLEANUP START
+
+* disable accent chars `defaults write -g ApplePressAndHoldEnabled -bool false`
+
 * install iterm beta (2.9+)
 * install patched font
   * https://github.com/powerline/fonts/tree/master/Inconsolata-g
