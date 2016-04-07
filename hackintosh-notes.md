@@ -80,6 +80,10 @@ git config --global github.token your_token_here # ???
 
 got config --global core.editor=/usr/local/bin/vim
 git config --global color.ui true
+
+# global gitignore
+ln -s ~/dotfiles/gitignore ~/.gitignore
+git config --global core.excludesfile ~/.gitignore
 ```
 
 #### Dropbox
