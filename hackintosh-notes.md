@@ -148,10 +148,11 @@ killall SystemUIServer
 
 ## Issues
 
-* Sound dies after waking up from sleep - change multibeast system config from 3,1 to 14,2
+* Sound dies after waking up from sleep
+  * change multibeast system config from 3,1 to 14,2
+  * change sound preferences to use "headphones"
 * usb 3.0 - change multibeast setting to use usb 3.0
-* 
 
 ## Need to fix
-
-* usb 3.0 not working
+* front panel usb 3.0 not working - unplug it
+* deep sleep sometimes reboots - tried disabling front panel usb but still not working right
