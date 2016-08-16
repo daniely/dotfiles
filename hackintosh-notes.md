@@ -12,6 +12,9 @@ credit to https://gist.github.com/kevinelliott/e12aa642a8388baf2499
 
 * brew install phantomjs
 
+* fix readline issue in pry - prevents history between pry sessions
+  `gem 'rb-readline'`
+
 ## Propane.pro project
 ```
 # install qt for capybara webkit
