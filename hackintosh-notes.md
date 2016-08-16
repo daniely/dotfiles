@@ -13,7 +13,8 @@ credit to https://gist.github.com/kevinelliott/e12aa642a8388baf2499
 * brew install phantomjs
 
 * fix readline issue in pry - prevents history between pry sessions
-  `gem 'rb-readline'`
+  * `gem 'rb-readline'`
+  * more info/options - https://github.com/guard/guard/wiki/Add-Readline-support-to-Ruby-on-Mac-OS-X
 
 ## Propane.pro project
 ```
