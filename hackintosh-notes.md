@@ -9,6 +9,9 @@ credit to https://gist.github.com/kevinelliott/e12aa642a8388baf2499
   * https://github.com/powerline/fonts/tree/master/Inconsolata-g
   * `cd ~/Library/Fonts && curl -fLo "Inconsolata-g for Powerline.otf" https://raw.githubusercontent.com/powerline/fonts/master/Inconsolata-g/Inconsolata-g%20for%20Powerline.otf`
   * set the font in Preferences -> Profiles -> Text
+* install tmux with 24bit color support
+  * `brew uninstall tmux`
+  * `brew install https://raw.githubusercontent.com/choppsv1/homebrew-term24/master/tmux.rb`
 
 * brew install phantomjs
 
