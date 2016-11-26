@@ -1,1 +1,8 @@
-My imperfect dot files. Pragmatism prevents them from being perfect :)
+'''
+# put files in $HOME/dotfiles/
+cd ~; git clone git@github.com:daniely/dotfiles.git
+'''
+
+* symlink .vimrc, .tmux.conf, .gitconfig
+* zsh config files (.zshenv, .zshrc, etc) need to be setup in prezto's folders
+  * git clone daniely branch of prezto repo
