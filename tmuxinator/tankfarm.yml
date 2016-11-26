@@ -1,7 +1,7 @@
 # ~/.tmuxinator/tankfarm.yml
 
 name: tankfarm
-root: ~/code/work/tankfarm
+root: ~/code/tankfarm.io
 
 # Optional tmux socket
 # socket_name: foo
