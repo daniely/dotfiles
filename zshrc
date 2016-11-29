@@ -19,7 +19,6 @@ DISABLE_AUTO_TITLE="true"
 # Uncomment following line if you want red dots to be displayed while waiting for completion
 # COMPLETION_WAITING_DOTS="true"
 
-export EDITOR=vim
 # completely disable zsh autocorrect
 #unsetopt correct_all
 
