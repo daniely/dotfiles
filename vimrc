@@ -9,7 +9,10 @@ call plug#begin('~/.vim/plugged')
 Plug 'scrooloose/nerdtree', { 'on':  'NERDTreeToggle' }
 Plug 'scrooloose/nerdcommenter'
 " color scheme
-Plug 'https://github.com/morhetz/gruvbox'
+"Plug 'https://github.com/morhetz/gruvbox'
+"Plug 'crusoexia/vim-monokai'
+"Plug 'jacoborus/tender'
+Plug 'w0ng/vim-hybrid'
 " git plugin
 Plug 'tpope/vim-fugitive'
 " rails specific
@@ -112,7 +115,7 @@ set history=1000
 
 let $NVIM_TUI_ENABLE_TRUE_COLOR=1
 set bg=dark
-colorscheme gruvbox
+colorscheme hybrid
 
 " can't tell if t_Co is working or not
 set t_Co=256
