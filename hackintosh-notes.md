@@ -2,6 +2,22 @@ credit to https://gist.github.com/kevinelliott/e12aa642a8388baf2499
 
 # CLEANUP START
 
+## Windows 10 (separate drive)
+### Installing Win 10
+* create EIFI install usb (r...something)
+* BIOS - change boot mode to legacy AND EIFI
+* format win 10 with Mac Disk Utility (mac journaled, GUID)
+* during win 10 install delete 2 non-EIFI partitions and install on it
+
+### Troubleshooting
+* make sure drive order attached to cables is correct. PNY (Win 10) then OCZ (Mac OSX)
+* BIOS - put Mac boots as first 2, then EUFI Win boot after
+* BIOS boot mode to legacy and EIFI
+* only win 10 boots and mac/clover never shows up?
+  * disconnect win 10 disk, boot to mac, then connect win 10 disk again
+
+----------------------
+
 * disable accent chars `defaults write -g ApplePressAndHoldEnabled -bool false`
 
 * install iterm beta (2.9+)
