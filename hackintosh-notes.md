@@ -15,6 +15,10 @@ credit to https://gist.github.com/kevinelliott/e12aa642a8388baf2499
 * BIOS boot mode to legacy and EIFI
 * only win 10 boots and mac/clover never shows up?
   * disconnect win 10 disk, boot to mac, then connect win 10 disk again
+* windows updates mess up booting?
+  * disconnect mac disk to boot into win 10
+  * bios makes win 10 primary boot disk - this is ok
+  * to get into mac osx hit f12 and pick "EUFI OS"
 
 ----------------------
 
