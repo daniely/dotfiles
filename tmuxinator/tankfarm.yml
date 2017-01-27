@@ -33,6 +33,6 @@ windows:
       layout: main-horizontal
       panes:
         - bundle exec sidekiq -q default -q mailers
-        - rails s -p 3000
         - rails c
+        - rails s -p 3000
   - console:
