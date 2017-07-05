@@ -170,6 +170,7 @@ killall SystemUIServer
 #### Ruby/Rails
 
 * `gem install pg`
+  * `gem install pg -- --with-pg-config='/Applications/Postgres.app/Contents/Versions/latest/bin/pg_config'`
   * need to add Postgress app’s path to $PATH
 * `gem install puma -v ‘2.11.2’ -- --with-cppflags=-I/usr/local/opt/openssl/include --with-ldflags=-L/usr/local/opt/openssl/lib`
 
