@@ -1,5 +1,16 @@
 credit to https://gist.github.com/kevinelliott/e12aa642a8388baf2499
 
+# notes from Oct 2017 and beyond
+
+* fix copy/paste issue - https://github.com/tmux/tmux/issues/543
+  * upgrade tmux to 2.6 or greater
+  * `brew install reattach-to-user-namespace`
+  * tmux.conf
+    * `setw -g mode-keys vi`
+    * `bind-key -T copy-mode-vi y send-keys -X copy-pipe-and-cancel "reattach-to-user-namespace pbcopy"`
+    * `bind-key -T copy-mode-vi MouseDragEnd1Pane send-keys -X copy-pipe-and-cancel "reattach-to-user-namespace pbcopy"`
+  * vimrc (for neovim)
+    * `set clipboard=unnamed`
 # CLEANUP START
 
 ## Windows 10 (separate drive)
