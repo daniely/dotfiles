@@ -6,7 +6,7 @@ set clipboard=unnamed
 
 " vim plugins
 " -----------------------------------------------------------------
-call plug#begin('~/.vim/plugged')
+call plug#begin('~/.local/share/nvim/plugged')
 
 " On-demand loading
 Plug 'scrooloose/nerdtree', { 'on':  'NERDTreeToggle' }
