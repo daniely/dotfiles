@@ -1,6 +1,9 @@
 " This must be first, because it changes other options as side effect
 set nocompatible
 
+" fix for mac osx copy/paste issue
+set clipboard=unnamed
+
 " vim plugins
 " -----------------------------------------------------------------
 call plug#begin('~/.vim/plugged')
