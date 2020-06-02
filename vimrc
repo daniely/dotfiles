@@ -32,6 +32,8 @@ Plug 'vim-airline/vim-airline'
 " for running tests in separate window
 Plug 'janko/vim-test'
 Plug 'christoomey/vim-tmux-runner'
+" seamless vim/tmux navigation
+Plug 'christoomey/vim-tmux-navigator'
 " Add plugins to &runtimepath
 call plug#end()
 
