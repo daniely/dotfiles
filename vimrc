@@ -29,6 +29,9 @@ Plug 'mileszs/ack.vim'
 " make things look nice
 Plug 'vim-airline/vim-airline'
 
+" for running tests in separate window
+Plug 'janko/vim-test'
+Plug 'christoomey/vim-tmux-runner'
 " Add plugins to &runtimepath
 call plug#end()
 
@@ -77,11 +80,16 @@ map <leader>d :NERDTreeToggle<CR>
 " ack command still uses the silver searcher
 map <leader>a :Ack!<space>
 
-" vimux mappings
-map <leader>vp :VimuxPromptCommand<CR>
-map <leader>vl :VimuxRunLastCommand<CR>
-map <leader>vi :VimuxInspectRunner<CR>
-map <leader>vx :VimuxClosePanes<CR>
+" test runner settings - vim-test which is using vim-tmux-runner (vtr) underneath
+let test#strategy = "vtr"
+map <leader>vn :TestNearest<CR>
+map <leader>vf :TestFile<CR>
+map <leader>vs :TestSuite<CR>
+map <leader>vl :TestLast<CR>
+map <leader>vv :TestVisit<CR>
+" vim-tmux-runner settings
+map <leader>vx :VtrKillRunner<CR>
+map <leader>vo :VtrOpenRunner<CR>
 
 " other key mappings
 " -----------------------------------------------------------------
