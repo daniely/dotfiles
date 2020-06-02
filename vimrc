@@ -24,8 +24,8 @@ Plug 'tpope/vim-haml'
 Plug 'slim-template/vim-slim'
 " ctrlp - replacement for commandT
 Plug 'https://github.com/ctrlpvim/ctrlp.vim'
-" ag / silver searcher - ack replacement
-Plug 'rking/ag.vim'
+" use ack plugin but use ag for doing the actual search
+Plug 'mileszs/ack.vim'
 " make things look nice
 Plug 'vim-airline/vim-airline'
 
@@ -74,8 +74,8 @@ map <leader>e :TagbarToggle<CR>
 " toggle NERDTree
 map <leader>d :NERDTreeToggle<CR>
 
-" ag a.k.a silver searcher
-map <leader>a :Ag<space>
+" ack command still uses the silver searcher
+map <leader>a :Ack!<space>
 
 " vimux mappings
 map <leader>vp :VimuxPromptCommand<CR>
@@ -178,8 +178,8 @@ set wildignore+=bower_components,node_modules,tmp
 " Use The Silver Searcher https://github.com/ggreer/the_silver_searcher
 " Credit: thoughtbot dotfiles
 if executable('ag')
-  " Use Ag over Grep
-  set grepprg=ag\ --nogroup\ --nocolor
+  " Use Ag over ack
+  let g:ackprg = 'ag --vimgrep --nogroup --ignore sorbet --ignore node_modules --ignore log'
   " Use ag in CtrlP for listing files. Lightning fast, respects .gitignore,
   " ignores hidden files
   " 
