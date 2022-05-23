@@ -28,8 +28,13 @@
 	excludesfile = /Users/daniel/.gitignore_global
 	autocrlf = input
 	safecrlf = false
-	editor = /usr/local/bin/vim
+	editor = /usr/local/bin/nvim
 [push]
 	default = current
 [credential]
 	helper = osxkeychain
+[filter "lfs"]
+	clean = git-lfs clean -- %f
+	smudge = git-lfs smudge -- %f
+	process = git-lfs filter-process
+	required = true
