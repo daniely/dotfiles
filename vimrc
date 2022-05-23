@@ -15,33 +15,56 @@ Plug 'scrooloose/nerdcommenter'
 "Plug 'https://github.com/morhetz/gruvbox'
 "Plug 'crusoexia/vim-monokai'
 "Plug 'jacoborus/tender'
-Plug 'w0ng/vim-hybrid'
+
+" colorscheme
+"Plug 'w0ng/vim-hybrid'
+Plug 'joshdick/onedark.vim'
+Plug 'mhartington/oceanic-next'
 " git plugin
 Plug 'tpope/vim-fugitive'
 " rails specific
 Plug 'tpope/vim-rails'
 Plug 'tpope/vim-haml'
 Plug 'slim-template/vim-slim'
-" ctrlp - replacement for commandT
+" ctrlp - but use ripgrep for doing the actual search
 Plug 'https://github.com/ctrlpvim/ctrlp.vim'
-" use ack plugin but use ag for doing the actual search
-Plug 'mileszs/ack.vim'
+" a wrapper for searching and displaying in quickfix window
+"Plug 'mileszs/ack.vim'
 " make things look nice
 Plug 'vim-airline/vim-airline'
 
 " for running tests in separate window
 Plug 'janko/vim-test'
+"Plug 'vim-test/vim-test'
 Plug 'christoomey/vim-tmux-runner'
+" maybe replace vim-tmux-runner with https://github.com/kassio/neoterm ??
+
 " seamless vim/tmux navigation
 Plug 'christoomey/vim-tmux-navigator'
+"Plug 'pechorin/any-jump.vim'
+Plug '/usr/local/opt/fzf', { 'do': { -> fzf#install() } }
+" syntax highlight requirement for fzf
+Plug 'sharkdp/bat'
+Plug 'junegunn/fzf.vim'
+Plug 'sheerun/vim-polyglot'
+"Plug 'mhinz/vim-signify'
+Plug 'lewis6991/gitsigns.nvim'
+"Plug 'skywind3000/asyncrun.vim'
+"Plug 'jgdavey/tslime.vim'
+
+" tig-explorer is slowing down ag.vim. disable for now and just use from
+" command line
+"Plug 'iberianpig/tig-explorer.vim'
+" tig-explorer dependency for neovim
+"Plug 'rbgrouleff/bclose.vim'
+
 " Add plugins to &runtimepath
 call plug#end()
 
+lua require('gitsigns').setup()
+
 " behavior
 " -----------------------------------------------------------------
-
-syn on
-syntax enable
 
 set hidden " hide buffers instead of closing
 set nowrap
@@ -72,6 +95,11 @@ set showcmd
 let mapleader = ","
 let g:mapleader = ","
 
+" fzf.vim for buffers
+map <leader>b :Buffers<CR>
+
+map <leader>p :GFiles<CR>
+
 map <leader>s :nohlsearch<CR>
 
 map <leader>e :TagbarToggle<CR>
@@ -79,8 +107,8 @@ map <leader>e :TagbarToggle<CR>
 " toggle NERDTree
 map <leader>d :NERDTreeToggle<CR>
 
-" ack command still uses the silver searcher
-map <leader>a :Ack!<space>
+" use ripgrep for search
+map <leader>a :Rg<space>
 
 " test runner settings - vim-test which is using vim-tmux-runner (vtr) underneath
 let test#strategy = "vtr"
@@ -126,9 +154,31 @@ set history=1000
 " graphics / look and feel / layout
 " -----------------------------------------------------------------
 
-let $NVIM_TUI_ENABLE_TRUE_COLOR=1
-set bg=dark
-colorscheme hybrid
+
+
+if (has("nvim"))
+  "For Neovim 0.1.3 and 0.1.4 < https://github.com/neovim/neovim/pull/2198 >
+  let $NVIM_TUI_ENABLE_TRUE_COLOR=1
+endif
+"For Neovim > 0.1.5 and Vim > patch 7.4.1799 < https://github.com/vim/vim/commit/61be73bb0f965a895bfb064ea3e55476ac175162 >
+"Based on Vim patch 7.4.1770 (`guicolors` option) < https://github.com/vim/vim/commit/8a633e3427b47286869aa4b96f2bfc1fe65b25cd >
+" < https://github.com/neovim/neovim/wiki/Following-HEAD#20160511 >
+if (has("termguicolors"))
+  set termguicolors
+endif
+
+
+syn on
+syntax enable
+let g:onedark_termcolors = 256
+"set bg=dark
+colorscheme onedark
+"colorscheme OceanicNext
+"let $BAT_THEME='gruvbox'
+
+" fix neovim popup window color scheme
+"hi CocFloating guibg=none guifg=none
+hi Quote ctermbg=109 guifg=#83a598
 
 " can't tell if t_Co is working or not
 set t_Co=256
@@ -165,9 +215,27 @@ autocmd BufReadPost fugitive://* set bufhidden=delete
 " default fugitive into vertial splits
 set diffopt+=vertical
 
-" ctrlp for buffers
-map <leader>b :CtrlPBuffer<CR>
-let g:ctrlp_match_window = 'max:25,results:25'
+" Customize fzf colors to match your color scheme
+" - fzf#wrap translates this to a set of `--color` options
+let g:fzf_colors =
+\ { 'fg':      ['fg', 'Normal'],
+  \ 'bg':      ['bg', 'Normal'],
+  \ 'hl':      ['fg', 'Comment'],
+  \ 'fg+':     ['fg', 'CursorLine', 'CursorColumn', 'Normal'],
+  \ 'bg+':     ['bg', 'CursorLine', 'CursorColumn'],
+  \ 'hl+':     ['fg', 'Statement'],
+  \ 'info':    ['fg', 'PreProc'],
+  \ 'border':  ['fg', 'Ignore'],
+  \ 'prompt':  ['fg', 'Conditional'],
+  \ 'pointer': ['fg', 'Exception'],
+  \ 'marker':  ['fg', 'Keyword'],
+  \ 'spinner': ['fg', 'Label'],
+  \ 'header':  ['fg', 'Comment'] }
+
+let $FZF_DEFAULT_COMMAND='rg --files'
+let $FZF_DEFAULT_OPTS="--bind \"ctrl-n:preview-down,ctrl-p:preview-up\""
+" fzf.vim - Popup window
+let g:fzf_layout = { 'window': { 'width': 0.95, 'height': 0.9, 'highlight': 'Comment' } }
 
 " jsx linting
 let g:syntastic_javascript_checkers = ['jsxhint']
@@ -185,18 +253,34 @@ let g:tagbar_usearrows = 1
 " ignore somd folders from fuzzy search
 set wildignore+=bower_components,node_modules,tmp
 
-" Use The Silver Searcher https://github.com/ggreer/the_silver_searcher
-" Credit: thoughtbot dotfiles
-if executable('ag')
-  " Use Ag over ack
-  let g:ackprg = 'ag --vimgrep --nogroup --ignore sorbet --ignore node_modules --ignore log'
-  " Use ag in CtrlP for listing files. Lightning fast, respects .gitignore,
-  " ignores hidden files
-  " 
-  let g:ctrlp_user_command = 'ag -Q -l --nocolor -g "" %s'
-  " ag is fast enough that CtrlP doesn't need to cache
+" CtrlP settings
+let g:ctrlp_match_window = 'max:25,results:25'
+if executable('rg')
+  " default ripgrep settings
+  set grepprg=rg\ -H\ --no-heading\ --vimgrep
+  set grepformat=%f:%l:%c:%m
+
+  " Use rg in CtrlP for listing files. Lightning fast and respects .gitignore
+  let g:ctrlp_user_command = 'rg %s --files --color=never --glob ""'
+  " rg is fast enough that CtrlP doesn't need to cache
   let g:ctrlp_use_caching = 0
 endif
+
+" old CtrlP settings that used Ack
+"if executable('ag')
+"  " Use Ag over ack
+"  let g:ackprg = 'ag --nocolor --column --vimgrep --nogroup --ignore sorbet --ignore node_modules --ignore log --ignore "./public/stylesheets/*"'
+"  " Use ag in CtrlP for listing files. Lightning fast, respects .gitignore,
+"  " ignores hidden files
+"  " 
+"  let g:ctrlp_user_command = 'ag -Q -l --nocolor -g "" %s'
+"  " ag is fast enough that CtrlP doesn't need to cache
+"  let g:ctrlp_use_caching = 0
+"endif
+
+" Navigate quickfix list with ease
+nnoremap <silent> [q :previous<CR>
+nnoremap <silent> ]q :cnext<CR>c
 
 " my unique preferences
 " -----------------------------------------------------------------
