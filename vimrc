@@ -6,7 +6,8 @@ set clipboard=unnamed
 
 " vim plugins
 " -----------------------------------------------------------------
-call plug#begin('~/.local/share/nvim/plugged')
+"call plug#begin('~/.local/share/nvim/plugged')
+call plug#begin(has('nvim') ? stdpath('data') . '/plugged' : '~/.vim/plugged')
 
 " On-demand loading
 Plug 'scrooloose/nerdtree', { 'on':  'NERDTreeToggle' }
@@ -42,10 +43,22 @@ Plug 'christoomey/vim-tmux-runner'
 " seamless vim/tmux navigation
 Plug 'christoomey/vim-tmux-navigator'
 "Plug 'pechorin/any-jump.vim'
-Plug '/usr/local/opt/fzf', { 'do': { -> fzf#install() } }
+
+Plug 'junegunn/fzf'
 " syntax highlight requirement for fzf
 Plug 'sharkdp/bat'
+" Add the fzf.vim plugin to wrap fzf:
 Plug 'junegunn/fzf.vim'
+
+" telescope dependencies
+Plug 'BurntSushi/ripgrep'
+Plug 'nvim-lua/plenary.nvim'
+Plug 'sharkdp/fd'
+Plug 'nvim-treesitter/nvim-treesitter'
+Plug 'nvim-tree/nvim-web-devicons'
+" alternative to fzf?
+Plug 'nvim-telescope/telescope.nvim', { 'branch': '0.1.x' }
+
 Plug 'sheerun/vim-polyglot'
 "Plug 'mhinz/vim-signify'
 Plug 'lewis6991/gitsigns.nvim'
@@ -97,6 +110,15 @@ let g:mapleader = ","
 
 " fzf.vim for buffers
 map <leader>b :Buffers<CR>
+" trying out telescope for managing buffers
+"map <leader>b :Telescope buffers<CR>
+
+" Using Lua functions
+nnoremap <leader>ff <cmd>lua require('telescope.builtin').find_files()<cr>
+nnoremap <leader>fg <cmd>lua require('telescope.builtin').live_grep()<cr>
+nnoremap <leader>fb <cmd>lua require('telescope.builtin').buffers({ sort_lastused = true })<cr>
+nnoremap <leader>fr <cmd>lua require('telescope.builtin').resume()<cr>
+nnoremap <leader>fh <cmd>lua require('telescope.builtin').help_tags()<cr>
 
 map <leader>p :GFiles<CR>
 
@@ -120,6 +142,11 @@ map <leader>vv :TestVisit<CR>
 " vim-tmux-runner settings
 map <leader>vx :VtrKillRunner<CR>
 map <leader>vo :VtrOpenRunner<CR>
+
+" gitsigns
+map <leader>gn :Gitsigns next_hunk<CR>
+map <leader>gp :Gitsigns prev_hunk<CR>
+map <leader>gr :Gitsigns preview_hunk<CR>
 
 " other key mappings
 " -----------------------------------------------------------------
@@ -189,6 +216,8 @@ set laststatus=2
 " show trailing white spaces
 set listchars=tab:>\ ,trail:-,extends:>,precedes:<,nbsp:+
 set list
+" make it red (match error message)
+match errorMsg /\s\+$/
 
 " auto adjust win height
 set winwidth=95
@@ -272,7 +301,7 @@ endif
 "  let g:ackprg = 'ag --nocolor --column --vimgrep --nogroup --ignore sorbet --ignore node_modules --ignore log --ignore "./public/stylesheets/*"'
 "  " Use ag in CtrlP for listing files. Lightning fast, respects .gitignore,
 "  " ignores hidden files
-"  " 
+"  "
 "  let g:ctrlp_user_command = 'ag -Q -l --nocolor -g "" %s'
 "  " ag is fast enough that CtrlP doesn't need to cache
 "  let g:ctrlp_use_caching = 0
@@ -286,7 +315,8 @@ nnoremap <silent> ]q :cnext<CR>c
 " -----------------------------------------------------------------
 
 " insert capybara screenshot
-imap <c-l> save_and_open_page
+"imap <c-l> save_and_open_page
+imap <c-l> div(class="")
 
 " Inserts the path of the currently edited file into a command
 " Command mode: Ctrl+P
