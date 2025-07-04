@@ -28,7 +28,7 @@
 	excludesfile = /Users/daniel/.gitignore_global
 	autocrlf = input
 	safecrlf = false
-	editor = /usr/local/bin/nvim
+	editor = /opt/homebrew/bin/nvim
 [push]
 	default = current
 [credential]
